@@ -1,6 +1,6 @@
 import { Response, Request, NextFunction } from 'express'
-import Menu from '../models/menuSchema'
 import CustomError from '../utils/CustomError'
+import Menu from '../models/menuSchema'
 
 
 export const createMenu = async (req: Request, res: Response, next: NextFunction) => {
