@@ -1,19 +1,16 @@
-import mongoose from "mongoose";
+import mongoose, { Schema, Document } from "mongoose";
 
-export interface menuType extends Document {
-    name: string
-    description: string
-    isDeleted: boolean
+export interface MenuType extends Document {
+    name: string;
+    description: string;
+    isDeleted: boolean;
 }
 
-const mensuSchema = new mongoose.Schema<menuType>({
-
+const menuSchema: Schema<MenuType> = new mongoose.Schema({
     name: { type: String, required: true },
     description: { type: String, required: true },
     isDeleted: { type: Boolean, required: true, default: false }
-},
-    { timestamps: true }
-)
+}, { timestamps: true });
 
-const Menu = mongoose.model<menuType>("Menu", mensuSchema);
+const Menu = mongoose.model<MenuType>("Menu", menuSchema);
 export default Menu;
